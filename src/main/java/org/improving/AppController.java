@@ -10,4 +10,14 @@ public class AppController {
     public String home() {
         return "index";
     }
+
+    @RequestMapping("/product")
+    public String product() {
+        return "product";
+    }
+
+    @RequestMapping("/form")
+    public String form() {
+        return "form";
+    }
 }
