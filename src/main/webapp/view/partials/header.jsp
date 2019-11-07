@@ -8,13 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventory</title>
     <!-- Example Page-->
-    <link rel="icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="/bootstrap-4.0.0-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/bootstrap-4.0.0-dist/css/bootstrap-reboot.css">
+    <link rel="icon" href="static/public/img/favicon.ico">
+    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap-reboot.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
-    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="stylesheet" href="static/public/css/stylesheet.css">
 </head>
 <!-- NAVBAR-->
 <div class="container-fluid">
@@ -23,9 +23,34 @@
             <div class="sidenav">
                 <div id="logo"><img src="/img/logo.png" alt=""></div>
                 <ul class="nav flex-column">
-                    <li class="nav-item"><a class="nav-link active" href="/"><span data-feather="home"></span>                      Dashboard <span class="sr-only">(current)</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="/product"><span data-feather="shopping-cart"></span>                      Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/form"><span data-feather="layers"></span>                      Add Product</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/"><span
+                    data-feather="home"></span>
+
+
+
+
+
+
+
+
+
+                                 Dashboard <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/product"><span
+                    data-feather="shopping-cart"></span>
+                                          Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/form"><span
+                    data-feather="layers"></span>
+
+
+
+
+
+
+
+
+
+
+                                Add Product</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><span data-feather="file"></span>                      Orders</a></li>
                     <li class="nav-item dropdown dropright"><a class="nav-link dropdown-toggle" data-toggle="dropdown"><span data-feather="users"></span>                      Customers</a>
                         <div class="dropdown-menu" x-placement="right-start" style="position: absolute; transform: translate3d(248px, 0px, 0px); top: 0px; left: 0px; will-change: transform;"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a></div>
@@ -55,6 +80,3 @@
                     </ul>
                 </div>
             </nav>
-        </main>
-    </div>
-</div>
