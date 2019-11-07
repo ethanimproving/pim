@@ -43,4 +43,9 @@ public class AppController {
     public String form() {
         return "form";
     }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
 }
