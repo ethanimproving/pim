@@ -26,14 +26,6 @@ public class Product implements Serializable {
     @Column(name = "Brand")
     private String Brand;
 
-//    public Product(String name, int price, int stock, String version, String brand) {
-//        Name = name;
-//        Price = price;
-//        Stock = stock;
-//        Version = version;
-//        Brand = brand;
-//    }
-
     public String getName() {
         return Name;
     }
