@@ -9,8 +9,12 @@
     <div class="card-body">
         <form class="row" method="POST" action="/form/add">
             <div class="col-sm-5">
-                <div class="form-group"><label for="productName">Name</label><input class="form-control" id="productName" type="name" name="name" placeholder="Product Name"></div>
-                <div class="form-group"><label for="productManufacturer">Manufacturer</label><input class="form-control" id="productManufacturer" type="name" name="brand" placeholder="Brand Name"></div>
+                <div class="form-group"><label for="productName">Name</label><input class="form-control"
+                                                                                    id="productName" type="text"
+                                                                                    name="Name" placeholder="Product Name"></div>
+                <div class="form-group"><label for="productManufacturer">Manufacturer</label><input
+                        class="form-control" id="productManufacturer" type="text" name="Brand"
+                        placeholder="Brand Name"></div>
                 <div class="form-group"><label for="productSKU">SKU</label><input class="form-control" id="productSKU" type="name" name="sku" placeholder="SKU Number"></div>
                 <div class="form-group">
                     <label for="inputQuantity">Attributes</label>
@@ -40,7 +44,8 @@
                         <label for="inputPrice3">Price</label>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend"><span class="input-group-text">$</span></div>
-                            <input class="form-control" type="number" name="price" aria-label="Amount (to the nearest dollar)">
+                            <input class="form-control" type="number" name="Price"
+                                   aria-label="Amount (to the nearest dollar)">
                             <div class="input-group-append"><span class="input-group-text">.00</span></div>
                         </div>
                     </div>
@@ -53,7 +58,7 @@
                         </div>
                     </div>
                     <div class="form-group col-md-4">
-                        <select class="form-control" id="inputQuantity" type="number" name="stock">
+                        <select class="form-control" id="inputQuantity" type="number" name="Stock">
                             <option selected="">Quantity...</option>
                             <option>1</option>
                             <option>5</option>
@@ -66,7 +71,9 @@
                     <div class="form-group col-md-8">
                         <div class="form-check mt-2"><input class="form-check-input" id="gridCheck1" type="checkbox"><label class="form-check-label" for="gridCheck1">In Stock</label></div>
                     </div>
-                    <div class="form-group col-md-12"><button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button></div>
+                    <div class="form-group col-md-12">
+                        <button class="btn btn-primary btn-lg btn-block" type="Submit">Submit</button>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-1"></div>

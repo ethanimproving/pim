@@ -45,4 +45,24 @@ public class Product implements Serializable {
     public String getBrand() {
         return Brand;
     }
+
+    public void setName(String name) {
+        this.Name = name;
+    }
+
+    public void setPrice(int price) {
+        Price = price;
+    }
+
+    public void setStock(int stock) {
+        Stock = stock;
+    }
+
+    public void setVersion(String version) {
+        Version = version;
+    }
+
+    public void setBrand(String brand) {
+        Brand = brand;
+    }
 }

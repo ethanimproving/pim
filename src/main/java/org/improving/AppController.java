@@ -1,8 +1,11 @@
 package org.improving;
 
+import org.dom4j.rule.Mode;
 import org.improving.database.JPAUtility;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.EntityManager;
@@ -13,10 +16,11 @@ import java.util.List;
 
 @Controller
 public class AppController {
+    private List<Product> products = getProductList();
 
     @RequestMapping("/")
     public String home(ModelMap model) {
-        model.put("products", getProductList());
+        model.put("products", products);
         return "index";
     }
 
@@ -43,6 +47,12 @@ public class AppController {
     @RequestMapping("/form")
     public String form() {
         return "form";
+    }
+
+    @PostMapping("/form/add")
+    public String add(ModelMap model, @ModelAttribute Product product) {
+        products.add(product);
+        return "redirect:/";
     }
 
     @RequestMapping("/login")
