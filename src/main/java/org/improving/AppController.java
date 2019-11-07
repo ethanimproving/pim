@@ -1,10 +1,13 @@
 package org.improving;
 
+import org.improving.database.JPAUtility;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Controller
@@ -12,27 +15,23 @@ public class AppController {
 
     @RequestMapping("/")
     public String home(ModelMap model) {
-        model.put("products", productList());
+        model.put("products", getProductList());
         return "index";
     }
 
-    private List<Product> productList() {
-        List<Product> books = new ArrayList<>();
-        books.add(new Product(
-                "Generic Fresh Bacon",
-                287,
-                783,
-                "4.0.0",
-                "Your Mom"
-        ));
-        books.add(new Product(
-                "Practical Granite",
-                830,
-                598,
-                "4.0.0",
-                "Military"
-        ));
-        return books;
+    public static List<Product> getProductList() {
+        EntityManager em = JPAUtility.getEntityManager();
+        String query = "select p from Product as p where p.id is not null";
+        TypedQuery<Product> tq = em.createQuery(query, Product.class);
+        List<Product> products;
+        try {
+            products = tq.getResultList();
+            products.forEach(product -> System.out.println(product.getName() + " " + product.getVersion()));
+            return products;
+        } catch (NoResultException ex) {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     @RequestMapping("/product")
