@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="partials/header.jsp"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="pt-5 px-5">
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
@@ -7,18 +8,24 @@
 </div>
 <div class="card shadow">
     <div class="card-body">
-        <form class="row" method="POST" action="/form/add">
+        <form:form class="row" action="/form/add" modelAttribute="product">
             <div class="col-sm-5">
-                <div class="form-group"><label for="productName">Name</label><input class="form-control"
-                                                                                    id="productName" type="text"
-                                                                                    name="Name" placeholder="Product Name"></div>
-                <div class="form-group"><label for="productManufacturer">Manufacturer</label><input
-                        class="form-control" id="productManufacturer" type="text" name="Brand"
-                        placeholder="Brand Name"></div>
-                <div class="form-group"><label for="productSKU">SKU</label><input class="form-control" id="productSKU" type="name" name="sku" placeholder="SKU Number"></div>
+                <div class="form-group"><label for="productName">Name</label>
+                    <form:input class="form-control" id="productName" path="Name" placeholder="Product Name" cssErrorClass="error"/>
+                    <form:errors path="Name" cssErrorClass="errorMessage"/>
+                </div>
+                <div class="form-group"><label for="productManufacturer">Manufacturer</label>
+                    <form:input class="form-control" id="productManufacturer" path="Brand" placeholder="Brand Name"
+                                cssErrorClass="error"/>
+                    <form:errors path="Brand" cssErrorClass="errorMessage"/>
+                </div>
+                <div class="form-group"><label for="productSKU">SKU</label>
+                    <form:input class="form-control" id="productSKU" path="sku" placeholder="SKU Number"
+                                cssErrorClass="error"/>
+                </div>
                 <div class="form-group">
                     <label for="inputQuantity">Attributes</label>
-                    <select class="form-control" id="inputQuantity" name="color">
+                    <form:select class="form-control" id="inputQuantity" path="color" cssErrorClass="error">
                         <option selected="">Color...</option>
                         <option>Black</option>
                         <option>Blue</option>
@@ -26,7 +33,7 @@
                         <option>Pink</option>
                         <option>Green</option>
                         <option>Orange</option>
-                    </select>
+                    </form:select>
                 </div>
                 <div class="form-group"><label for="exampleFormControlDescription">Description</label><textarea class="form-control" id="exampleFormControlDescription" rows="3"></textarea></div>
             </div>
@@ -77,7 +84,7 @@
                 </div>
             </div>
             <div class="col-sm-1"></div>
-        </form>
+        </form:form>
     </div>
 </div>
 </div>
