@@ -16,8 +16,7 @@ dependencies {
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
     implementation 'org.hibernate:hibernate-entitymanager:5.4.8.Final'
     implementation 'mysql:mysql-connector-java:8.0.18'
-//    provideRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
     testRuntime 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
-
 }

@@ -33,7 +33,6 @@ public class AppController {
         List<Product> products;
         try {
             products = tq.getResultList();
-            products.forEach(product -> System.out.println(product.getName() + " " + product.getVersion()));
             return products;
         } catch (NoResultException ex) {
             ex.printStackTrace();
