@@ -26,6 +26,12 @@ public class Product implements Serializable {
     @Column(name = "Brand")
     private String Brand;
 
+    @Transient
+    private int Sku;
+
+    @Transient
+    private String Color;
+
     public String getName() {
         return Name;
     }
@@ -64,5 +70,21 @@ public class Product implements Serializable {
 
     public void setBrand(String brand) {
         Brand = brand;
+    }
+
+    public int getSku() {
+        return Sku;
+    }
+
+    public void setSku(int sku) {
+        Sku = sku;
+    }
+
+    public String getColor() {
+        return Color;
+    }
+
+    public void setColor(String color) {
+        Color = color;
     }
 }

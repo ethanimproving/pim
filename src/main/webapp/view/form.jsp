@@ -20,7 +20,7 @@
                     <form:errors path="Brand" cssErrorClass="errorMessage"/>
                 </div>
                 <div class="form-group"><label for="productSKU">SKU</label>
-                    <form:input class="form-control" id="productSKU" path="sku" placeholder="SKU Number"
+                    <form:input class="form-control" id="productSKU" type="number" path="sku" placeholder="SKU Number"
                                 cssErrorClass="error"/>
                 </div>
                 <div class="form-group">
