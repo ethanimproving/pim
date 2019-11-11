@@ -25,7 +25,7 @@
             <tbody>
             <c:forEach items="${products}" var="product">
                 <tr>
-                    <td>${product.getName()}</td>
+                    <td><a href="/product?${product.id}">${product.getName()}</a></td>
                     <td>${product.getPrice()}</td>
                     <td>${product.getStock()}</td>
                     <td>${product.getVersion()}</td>

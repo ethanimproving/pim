@@ -2,9 +2,11 @@ package org.improving;
 
 import org.dom4j.rule.Mode;
 import org.improving.database.JPAUtility;
+import org.improving.exceptions.SystemErrorException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -64,5 +66,10 @@ public class AppController {
     @RequestMapping("/login")
     public String login() {
         return "login";
+    }
+
+    @GetMapping("/bad")
+    public String errorHandling(){
+        throw new SystemErrorException();
     }
 }

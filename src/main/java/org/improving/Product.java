@@ -87,4 +87,8 @@ public class Product implements Serializable {
     public void setColor(String color) {
         Color = color;
     }
+
+    public int getId() {
+        return id;
+    }
 }
