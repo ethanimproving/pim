@@ -1,6 +1,7 @@
 package org.improving;
 
 import org.dom4j.rule.Mode;
+import org.improving.client.QuoteClient;
 import org.improving.database.JPAUtility;
 import org.improving.exceptions.SystemErrorException;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,11 @@ import java.util.List;
 public class AppController {
     private ProductRepository productRepository = new ProductRepository();
     private List<Product> products = productRepository.getProducts();
+    private QuoteClient quoteClient;
+
+    public AppController(QuoteClient quoteClient) {
+        this.quoteClient = quoteClient;
+    }
 
     @RequestMapping("/")
     public String home(ModelMap model) {
@@ -24,6 +30,7 @@ public class AppController {
 
     @RequestMapping("/product")
     public String product(ModelMap model, @RequestParam int id) {
+        model.put("quote", quoteClient.quoteRetriever());
         model.put("product", productRepository.getProduct(id));
         return "product";
     }

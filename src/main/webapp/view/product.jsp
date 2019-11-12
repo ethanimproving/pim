@@ -15,8 +15,9 @@
                                                                  alt=""></div>
                 </div>
                 <div class="col-sm-6">
-                    <h5 class="card-title">Tasty Cotton Gloves</h5>
+                    <h5 class="card-title">${product.name}</h5>
                     <p class="card-text">With suprising soft feel as a natural lead-in to touching bathtubs. Keep sensitive products clean from fingerprints and smudges.</p>
+                    <p><i>"${quote}" ~ Kanye West</i></p>
                 </div>
             </div>
             <a class="btn btn-primary" href="#">Buy Right Now!</a>
