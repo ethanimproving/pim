@@ -8,20 +8,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inventory</title>
     <!-- Example Page-->
-    <link rel="icon" href="static/public/img/favicon.ico">
-    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/public/bootstrap-4.0.0-dist/css/bootstrap-reboot.css">
+    <link rel="icon" href="/static/public/img/favicon.ico">
+    <link rel="stylesheet" href="/static/public/bootstrap-4.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/public/bootstrap-4.0.0-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="/static/public/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/public/bootstrap-4.0.0-dist/css/bootstrap-reboot.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
-    <link rel="stylesheet" href="static/public/css/stylesheet.css">
+    <link rel="stylesheet" href="/static/public/css/stylesheet.css">
 </head>
 <!-- NAVBAR-->
 <div class="container-fluid">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar" id="sidebar">
             <div class="sidenav">
-                <div id="logo"><img src="static/public/img/logo.png" alt=""></div>
+                <div id="logo"><img src="/static/public/img/logo.png" alt=""></div>
                 <ul class="nav flex-column">
                     <li class="nav-item">
                         <a class="nav-link active" href="/">

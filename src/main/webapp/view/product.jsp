@@ -6,7 +6,7 @@
         <h1 class="h2">Product Page</h1>
     </div>
     <div class="card">
-        <h5 class="card-header">Tasty Cotton Gloves</h5>
+        <h5 class="card-header">${product.name}</h5>
         <div class="card-body">
             <div class="row">
                 <div class="col-sm-6">

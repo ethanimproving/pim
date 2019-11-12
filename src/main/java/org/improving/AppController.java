@@ -6,21 +6,15 @@ import org.improving.exceptions.SystemErrorException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.NoResultException;
-import javax.persistence.TypedQuery;
 import javax.validation.Valid;
 import java.util.List;
 
 @Controller
 public class AppController {
-    private List<Product> products = getProductList();
+    private ProductRepository productRepository = new ProductRepository();
+    private List<Product> products = productRepository.getProducts();
 
     @RequestMapping("/")
     public String home(ModelMap model) {
@@ -28,22 +22,9 @@ public class AppController {
         return "index";
     }
 
-    public static List<Product> getProductList() {
-        EntityManager em = JPAUtility.getEntityManager();
-        String query = "select p from Product as p where p.id is not null";
-        TypedQuery<Product> tq = em.createQuery(query, Product.class);
-        List<Product> products;
-        try {
-            products = tq.getResultList();
-            return products;
-        } catch (NoResultException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-    }
-
     @RequestMapping("/product")
-    public String product() {
+    public String product(ModelMap model, @RequestParam int id) {
+        model.put("product", productRepository.getProduct(id));
         return "product";
     }
 
@@ -59,6 +40,7 @@ public class AppController {
             System.out.println("Error!");
             return "form";
         }
+        // TODO: UnsupportedOperationException: null
         products.add(product);
         return "redirect:/";
     }

@@ -20,12 +20,12 @@
                     <form:errors path="Brand" cssErrorClass="errorMessage"/>
                 </div>
                 <div class="form-group"><label for="productSKU">SKU</label>
-                    <form:input class="form-control" id="productSKU" type="number" path="sku" placeholder="SKU Number"
+                    <form:input class="form-control" id="productSKU" type="number" path="Sku" placeholder="SKU Number"
                                 cssErrorClass="error"/>
                 </div>
                 <div class="form-group">
-                    <label for="inputQuantity">Attributes</label>
-                    <form:select class="form-control" id="inputQuantity" path="color" cssErrorClass="error">
+                    <label for="inputColor">Attributes</label>
+                    <form:select class="form-control" id="inputColor" path="Color" cssErrorClass="error">
                         <option selected="">Color...</option>
                         <option>Black</option>
                         <option>Blue</option>
@@ -43,7 +43,7 @@
                     <div class="avatar-edit"><input id="imageUpload" type="file" name="imagePath" accept=".png, .jpg, .jpeg"><label for="imageUpload"></label></div>
                     <div class="avatar-preview">
                         <div id="imagePreview"
-                             style="background-image: url(static/public/img/logo.png);"></div>
+                             style="background-image: url(/static/public/img/logo.png);"></div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="form-group col-md-4">
-                        <select class="form-control" id="inputQuantity" type="number" name="Stock">
+                        <form:select class="form-control" id="inputQuantity" type="number" path="Stock" cssErrorClass="error">
                             <option selected="">Quantity...</option>
                             <option>1</option>
                             <option>5</option>
@@ -73,11 +73,17 @@
                             <option>25</option>
                             <option>50</option>
                             <option>100</option>
-                        </select>
+                        </form:select>
                     </div>
                     <div class="form-group col-md-8">
-                        <div class="form-check mt-2"><input class="form-check-input" id="gridCheck1" type="checkbox"><label class="form-check-label" for="gridCheck1">In Stock</label></div>
+                        <form:input class="form-control" id="productVersion" path="Version"
+                                    placeholder="Product Version"
+                                    cssErrorClass="error"/>
+                        <form:errors path="Version" cssErrorClass="errorMessage"/>
                     </div>
+<!--                    <div class="form-group col-md-8">-->
+<!--                        <div class="form-check mt-2"><input class="form-check-input" id="gridCheck1" type="checkbox"><label class="form-check-label" for="gridCheck1">In Stock</label></div>-->
+<!--                    </div>-->
                     <div class="form-group col-md-12">
                         <button class="btn btn-primary btn-lg btn-block" type="Submit">Submit</button>
                     </div>
