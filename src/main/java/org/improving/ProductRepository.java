@@ -44,6 +44,6 @@ public class ProductRepository {
     }
 
     public List<Product> getProducts() {
-        return Collections.unmodifiableList(products);
+        return products;
     }
 }

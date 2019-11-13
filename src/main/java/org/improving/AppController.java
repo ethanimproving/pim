@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -44,7 +45,7 @@ public class AppController {
     }
 
     @PostMapping("/form/add")
-    public String add(ModelMap model, @Valid @ModelAttribute("product") Product product, BindingResult bindingResult) {
+    public String add(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             System.out.println("Error!");
             return "form";
