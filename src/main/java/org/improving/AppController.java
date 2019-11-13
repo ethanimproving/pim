@@ -1,8 +1,7 @@
 package org.improving;
 
-import org.dom4j.rule.Mode;
+import org.improving.client.CharacterClient;
 import org.improving.client.QuoteClient;
-import org.improving.database.JPAUtility;
 import org.improving.exceptions.SystemErrorException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,9 +16,11 @@ public class AppController {
     private ProductRepository productRepository = new ProductRepository();
     private List<Product> products = productRepository.getProducts();
     private QuoteClient quoteClient;
+    private CharacterClient characterClient;
 
-    public AppController(QuoteClient quoteClient) {
+    public AppController(QuoteClient quoteClient, CharacterClient characterClient) {
         this.quoteClient = quoteClient;
+        this.characterClient = characterClient;
     }
 
     @RequestMapping("/")
@@ -31,6 +32,7 @@ public class AppController {
     @RequestMapping("/product")
     public String product(ModelMap model, @RequestParam int id) {
         model.put("quote", quoteClient.quoteRetriever());
+        // TODO: model.put("character", characterClient.characterSearch(id));
         model.put("product", productRepository.getProduct(id));
         return "product";
     }
