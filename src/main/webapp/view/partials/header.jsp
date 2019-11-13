@@ -29,7 +29,7 @@
                                  Dashboard <span class="sr-only">(current)
                              </span>
                          </a></li>
-                    <li class="nav-item"><a class="nav-link" href="/product"><span
+                    <li class="nav-item"><a class="nav-link" href="/"><span
                     data-feather="shopping-cart"></span>
                                           Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="/form"><span
