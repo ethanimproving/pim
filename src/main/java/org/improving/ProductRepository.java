@@ -1,14 +1,14 @@
 package org.improving;
 
 import org.improving.database.JPAUtility;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
-import java.awt.print.Book;
-import java.util.Collections;
 import java.util.List;
 
+@Repository
 public class ProductRepository {
     private final List<Product> products = getProductList();
 
